@@ -15,8 +15,7 @@ MainWidget::MainWidget(QWidget *parent) :
     connect(ui->saveGameButton, SIGNAL(clicked(bool)),
             this, SLOT(saveGame()));
     connect(ui->exitGameButton, SIGNAL(clicked(bool)),
-            this, SLOT(close()));
-
+            this, SLOT(close()));   
 }
 
 MainWidget::~MainWidget()
