@@ -40,9 +40,11 @@ CONFIG(release, debug|release): {
 }
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+    logic/mainsettings.cpp
 
-HEADERS +=
+HEADERS += \
+    logic/mainsettings.h
 
 FORMS +=
 
