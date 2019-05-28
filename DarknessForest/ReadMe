@@ -1,0 +1,5 @@
+Commit: Restart
+- delete mainwidget.cpp/mainwidget.h/mainwidget.ui 
+	restart project without .ui ideology
+- change C++11 to C++14
+- add configuration debug with qDebug output  and release without qDebug output

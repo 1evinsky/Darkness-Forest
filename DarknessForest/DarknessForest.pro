@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui widgets
+QT       += core gui
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = DarknessForest
 TEMPLATE = app
@@ -20,17 +21,30 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-CONFIG += c++11
+CONFIG += c++14
+
+# Show message, that build mode: Debug
+CONFIG(release, debug|release) {
+    message("Build type: Release")
+}
+
+# Show message, that build mode: Release
+CONFIG(  debug, debug|release) {
+    message("Build type: Debug"  )
+}
+
+# Disable qDebug() on Release
+CONFIG(release, debug|release): {
+    DEFINES += QT_NO_DEBUG_OUTPUT
+    message("On Release qDebug() disabled")
+}
 
 SOURCES += \
-        main.cpp \
-    mainwidget.cpp
+        main.cpp
 
-HEADERS += \
-    mainwidget.h
+HEADERS +=
 
-FORMS += \
-    mainwidget.ui
+FORMS +=
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
