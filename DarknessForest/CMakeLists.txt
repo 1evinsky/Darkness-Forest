@@ -12,6 +12,8 @@ qt_add_executable(appDarknessForest
     main.cpp
     src/UiBackend.hpp
     src/UiBackend.cpp
+    src/Setting.hpp
+    src/Setting.cpp
 )
 
 qt_add_qml_module(appDarknessForest
